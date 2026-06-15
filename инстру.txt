@@ -1,0 +1,122 @@
+ИНСТРУКЦИЯ ДЛЯ ЗАПУСКА ANDROID ПРОЕКТА
+
+1. Скопируй с флешки архив 07_Module_C_PM.zip на Рабочий стол.
+
+2. Нажми правой кнопкой по архиву и выбери Extract All / Извлечь всё.
+
+3. После распаковки должна появиться папка 07_Module_C_PM.
+
+4. Открой Android Studio.
+
+5. На стартовом экране нажми Open.
+
+6. Выбери папку 07_Module_C_PM.
+
+Важно: выбирай именно главную папку 07_Module_C_PM, не папку app.
+
+Правильная папка та, внутри которой есть settings.gradle.kts, build.gradle.kts, app, gradle, gradlew.bat.
+
+7. Если появится Trust Project, нажми Trust Project.
+
+8. Подожди, пока Android Studio загрузит проект. Внизу может идти Gradle Sync. Нужно просто ждать.
+
+9. Если номер рабочего места 07, ничего переименовывать не надо.
+
+10. Если номер рабочего места другой, например 12, сделай так:
+
+Переименуй папку 07_Module_C_PM в 12_Module_C_PM.
+
+Переименуй файл 07_Module_C_PM.apk в 12_Module_C_PM.apk.
+
+Открой файл MainActivity.kt.
+
+Он находится здесь:
+app/src/main/java/edu/ws2024/c07/pm/MainActivity.kt
+
+В первой строке замени:
+package edu.ws2024.c07.pm
+
+на:
+package edu.ws2024.c12.pm
+
+Потом открой файл:
+app/build.gradle.kts
+
+Найди строки:
+namespace = "edu.ws2024.c07.pm"
+applicationId = "edu.ws2024.c07.pm"
+
+Замени на:
+namespace = "edu.ws2024.c12.pm"
+applicationId = "edu.ws2024.c12.pm"
+
+После этого нажми File → Sync Project with Gradle Files.
+
+11. Для запуска нужен планшетный эмулятор.
+
+Открой Tools → Device Manager.
+
+Если там уже есть Pixel C или Pixel Tablet, нажми кнопку запуска рядом с ним.
+
+Если планшетного эмулятора нет, нажми Create Virtual Device.
+
+Выбери Tablet.
+
+Выбери Pixel C. Если Pixel C нет, выбери Pixel Tablet.
+
+Нажми Next.
+
+Выбери API 35 или API 36.
+
+Если есть кнопка Download, нажми Download и дождись окончания.
+
+Потом нажми Next → Finish.
+
+12. Запусти tablet emulator кнопкой ▶.
+
+13. Когда эмулятор откроется, сверху в Android Studio выбери этот эмулятор.
+
+14. Нажми Run ▶.
+
+15. Если приложение открылось, всё нормально.
+
+16. Чтобы собрать APK, открой Terminal внизу Android Studio.
+
+17. Вставь команду:
+    .\gradlew.bat clean assembleDebug
+
+18. Дождись BUILD SUCCESSFUL.
+
+19. APK появится здесь:
+    app\build\outputs\apk\debug\app-debug.apk
+
+20. Если номер рабочего места 07, вставь команду:
+    copy "app\build\outputs\apk\debug\app-debug.apk" "07_Module_C_PM.apk"
+
+Если номер рабочего места 12, вставь команду:
+copy "app\build\outputs\apk\debug\app-debug.apk" "12_Module_C_PM.apk"
+
+21. В корне проекта должен лежать APK с правильным именем.
+
+Для места 07:
+07_Module_C_PM.apk
+
+Для места 12:
+12_Module_C_PM.apk
+
+22. Для загрузки на GitHub открой репозиторий в браузере.
+
+23. Нажми Add file → Upload files.
+
+24. Открой папку проекта.
+
+25. Выдели всё внутри папки Ctrl + A.
+
+26. Перетащи всё в GitHub.
+
+27. Внизу напиши commit message:
+    Implement Module C PM Android app
+
+28. Нажми Commit changes.
+
+29. Готово.
